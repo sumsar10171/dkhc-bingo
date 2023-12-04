@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DKHC | Bingo</title>
+    
+        <!-- Include bootstrap 5.3 CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        
+        <!-- Include Vue.js -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    </head>
+    <body style="background-color: #96d5e6;">
+        <!-- Bootstrap -->
+        <div class="container" id="app">
+            <div class="row" style="margin-top: 20vh">
+                <div class="offset-2 col-8 text-center">
+                    <div class="card card-body">
+                        <iframe :src="`binge.dkhc.dk/files/plade (${id}).pdf`" style="width: 100%; height: 50vh; border: none; margin: 0; padding: 0; overflow: hidden;" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        // Vue.js
+        const app = Vue.createApp({
+            data() {
+                return {
+                    id: undefined,
+                }
+            },
+            mounted() {
+                //Set id to random number between 1 and 200
+                this.id = Math.floor(Math.random() * 200) + 1;
+            }
+        })
+        app.mount('#app')
+    </script>
+
+</html>
